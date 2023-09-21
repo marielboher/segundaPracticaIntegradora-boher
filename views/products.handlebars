@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/src/public/css/products.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <title>Document</title>
+</head>
+<body>
+     <div class="nav-products">
+        <p class="info-off">30% off site wide and free shipping with promo code: SUMMERSALE</p>
+        <h1 class="title-home">SONS</h1>
+   <div class="container-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/profile">Profile</a></li>
+    </ul>
+</div>
+     </div>
+<div class="container">
+    <div class="row">
+        <div class="user">
+            <p>Bienvenido, {{user.first_name}} {{user.last_name}}!</p>
+        </div>
+        {{#each products.payload}}
+            <div class="col-md-4">
+                <div class="card border-0 mb-3">
+                    <a href="/products/{{this._id}}" class="text-decoration-none">
+                        <div class="marco-img"><img src="{{this.thumbnails}}" class="img-fluid" alt="{{this.title}}"></div>
+                    </a>
+                    <div class="card-body text-center">
+                        <p class="card-text text-dark">{{this.title}}<br><span>${{this.price}}</span></p>
+                        <p  class="agregar"><button onclick="agregarProductoAlCarrito('{{this._id}}')">Agregar</button></p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="row my-5">
+        <div class="col">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    {{#if products.hasPrevPage}}
+                        <li class="page-item">
+                            <a class="page-link" href="{{products.prevLink}}"><<</a>
+                        </li>
+                    {{/if}}
+                    {{#if products.hasPrevPage}}
+                        <li class="page-item">
+                            <a class="page-link" href="{{products.prevLink}}">{{products.prevPage}}</a>
+                        </li>    
+                    {{/if}}
+                    <li class="page-item">
+                        <a class="page-link">{{products.page}}</a>
+                    </li>
+                    {{#if products.hasNextPage}}
+                        <li class="page-item">
+                            <a class="page-link" href="{{products.nextLink}}">{{products.nextPage}}</a>
+                        </li>    
+                    {{/if}}
+                    {{#if products.hasNextPage}}
+                        <li class="page-item">
+                            <a class="page-link" href="{{products.nextLink}}">>></a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script src="/src/public/cart.js"></script>
+    
+</body>
+</html>
+

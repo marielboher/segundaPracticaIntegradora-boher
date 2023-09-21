@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/public/css/products.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="nav-products">
+    <p class="info-off">30% off site wide and free shipping with promo code: SUMMERSALE</p>
+    <h1 class="title-home">SONS</h1>
+    <div class="container-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/profile">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-detail-container">
+    <div class="details">
+      <div class="marco-imagen"><img src={{product.thumbnails}}></div>
+      <h1>{{product.title}}</h1>
+      <p>{{product.description}}</p>
+      <p>Precio: {{product.price}}</p>
+
+      <p><button class="btn btn-dark" onclick="agregarProductoAlCarrito('{{product._id}}')">Agregar</button></p>
+    </div>
+  </div>
+</body>
+<script src="/src/public/cart.js"></script>
+
+</html>

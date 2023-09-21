@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/public/css/style.css">
+  <title>Lista de Productos</title>
+</head>
+<div class="container">
+  <div class="container-chat">
+        <div id="chat">
+          <form id="form" action="" class="form-chat">
+            <input id="user" autocomplete="off" placeholder="Nombre" />
+            <input id="input" autocomplete="off" placeholder="Escribe un mensaje..." /><button>Enviar</button>
+          <ul id="messages"></ul>
+          </form>
+        </div>
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/src/public/chat.js"></script>

@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/public/css/products.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+        <div class="nav-products">
+        <p class="info-off">30% off site wide and free shipping with promo code: SUMMERSALE</p>
+        <h1 class="title-home">SONS</h1>
+   <div class="container-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/profile">Profile</a></li>
+    </ul>
+</div>
+     </div>
+    <div class="container-profile">
+        <div class="user-data">
+          <h1>Bienvenido, {{user.first_name}} {{user.last_name}}</h1>
+          <p>Tu correo electrónico es: {{user.email}}</p>
+        <p>Tu rol es: {{user.role}}</p>
+        </div>
+      <form action="/api/sessions/logout" method="POST">
+        <button type="submit" class="btn-logout">Cerrar Sesión</button>
+      </form>
+    </div>
+
+  </body>
+</html>

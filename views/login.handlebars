@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/public/css/products.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-login">
+      <div class="login">
+        <h1>Loguearme!</h1>
+        <form class="form_main" action="">
+          <div class="login-form">
+            <label class="form-label"></label>
+            <div class="inputContainer">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Username"
+              />
+            </div>
+          </div>
+          <div class="login-form">
+            <label class="form-label"></label>
+            <div class="inputContainer">
+
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-login"
+            id="btnLogIn"
+          >Loguarme</button>
+        </form>
+        <div class="signupContainer">
+          <p>Don't have any account?</p>
+          <a href="/register">Sign up</a>
+          <p class="my-3">Or LogIn whit</p>
+            <a href="/api/sessions/github">GitHub</a>
+
+        </div>
+      </div>
+    </div>
+    <script src="../src/public/login.js"></script>
+  </body>
+</html>

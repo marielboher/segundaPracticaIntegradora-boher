@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/public/css/style.css">
+  <title>Productos en tiempo real</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Productos en tiempo real</h1>
+    <p>Los Post y Delete se manejan desde postman y se ven reflejados en tiempo real aqui</p>
+    <h4>Lista de Productos</h4>
+    <ul id="productList" class="realtime-products">
+      {{#each products}}
+      <li id="product-{{this._id}}" class="product">
+        <img src={{this.thumbnails}} alt={{this.title}}>
+        <span>Producto: {{this.title}} - Stock: {{this.stock}} - Descripción: {{this.description}}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/src/public/realTimeProducts.js"></script>
+</html>
